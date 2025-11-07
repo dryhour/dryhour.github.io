@@ -2790,7 +2790,7 @@ input, select, textarea {
 				bottom: 0;
 				content: '';
 				display: block;
-				height: 100%;
+				height: 75%;
 				left: 0;
 				opacity: 0.85;
 				position: absolute;
@@ -2833,14 +2833,13 @@ input, select, textarea {
 
 			.tiles article {
 				width: 100%;
-				height: 50%;
 			}
 			
-			.tiles article:nth-child(4n - 1) {
+			.tiles article:nth-child(odd) {
 				background-color: #252235;
 			}
 
-			.tiles article:nth-child(4n - 2) {
+			.tiles article:nth-child(even) {
 				background-color: #dbd9e8;
 			}
 			
