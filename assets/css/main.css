@@ -2835,13 +2835,14 @@ input, select, textarea {
 				width: 100%;
 			}
 			
-			.tiles article:nth-child(odd) {
+			.tiles article:nth-child(2n - 1) {
 				background-color: #252235;
 			}
 
-			.tiles article:nth-child(even) {
+			.tiles article:nth-child(2n) {
 				background-color: #dbd9e8;
 			}
+
 			
 			/*
 			.tiles article:nth-child(6n - 5):before {
