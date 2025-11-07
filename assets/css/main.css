@@ -2834,8 +2834,17 @@ input, select, textarea {
 			.tiles article {
 				width: 100%;
 				height: 50%;
-			}			
+			}
+			
+			.tiles article:nth-child(4n - 1) {
+				background-color: #252235;
+			}
 
+			.tiles article:nth-child(4n - 2) {
+				background-color: #dbd9e8;
+			}
+			
+			/*
 			.tiles article:nth-child(6n - 5):before {
 				background-color: #252235;
 			}
@@ -2858,7 +2867,7 @@ input, select, textarea {
 
 			.tiles article:nth-child(6n):before {
 				background-color: #87c5a4;
-			}
+			} */
 
 		@media screen and (max-width: 1280px) {
 
