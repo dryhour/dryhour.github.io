@@ -2836,11 +2836,11 @@ input, select, textarea {
 			}
 			
 			.tiles article:nth-child(2n - 1) {
-				background-color: #252235;
+				background-color: #dbd9e8;
 			}
 
 			.tiles article:nth-child(2n) {
-				background-color: #dbd9e8;
+				background-color: #252235;
 			}
 
 			
