@@ -10,10 +10,10 @@ const colors = [
     '#04ccb1'
 ];
 
-circles.forEach(function(circle, index){
+circles.forEach(function(circle, i){
     circle.x = 0;
     circle.y = 0;
-    circle.style.BackgroundColor = colors[index % colors.length];
+    circle.style.BackgroundColor = colors[i % colors.length];
 });
 
 window.addEventListener("mousemove", function(e){
