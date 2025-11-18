@@ -13,7 +13,7 @@ const colors = [
 circles.forEach(function(circle, i){
     circle.x = 0;
     circle.y = 0;
-    circle.style.BackgroundColor = colors[i % colors.length];
+    circle.style.backgroundColor = colors[i % colors.length];
 });
 
 window.addEventListener("mousemove", function(e){
