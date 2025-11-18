@@ -10,7 +10,7 @@ const colors = [
     '#04ccb1'
 ];
 
-circles.forEach(function(circle){
+circles.forEach(function(circle, index){
     circle.x = 0;
     circle.y = 0;
     circle.style.BackgroundColor = colors[index % colors.length];
