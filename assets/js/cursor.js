@@ -19,8 +19,6 @@ circles.forEach(function(circle, i){
 window.addEventListener("mousemove", function(e){
     coords.x = e.clientX;
     coords.y = e.clientY;
-
-    console.log(coords);
 });
 
 function animateCircles(){
@@ -31,14 +29,14 @@ function animateCircles(){
         circle.style.left = coords.x - 12 + "px";
         circle.style.top = coords.y - 12 + "px";
 
-        circle.style.state = (circles.length - index) / circles.length;
+        circle.style.scale = (circles.length - index) / circles.length;
 
         circle.x = x;
         circle.y = y;
 
         const newCircle = circles[index + 1] || circles[0];
-        x += (newCircle.x - x) * 0.3;
-        y += (newCircle.y - y) * 0.3;
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
     });
 
     requestAnimationFrame(animateCircles);
