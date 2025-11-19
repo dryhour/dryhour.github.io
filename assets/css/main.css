@@ -197,6 +197,31 @@ input, select, textarea {
 		to {opacity: 1; scale: 1;}
 	}
 
+	.resume-button {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 10px 20px;
+		text-decoration: none;
+		border-radius: 10px;
+		border: 2px solid #2a2f4a;
+		font-weight: bold;
+		transition: background 0.2s;
+		color: white;
+	}
+	
+	.resume-button:hover {
+		background-color: #005fcc;
+	}
+	
+	.resume-button .icon {
+		width: 20px;
+		height: 20px;
+	}
+	
+	
+	
+
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
@@ -3511,7 +3536,7 @@ input, select, textarea {
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 45vh;
+		height: 75vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;
 		min-height: 22em;
