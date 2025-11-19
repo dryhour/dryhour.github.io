@@ -1,4 +1,5 @@
 const coords = { x: 0, y: 0 };
+const wrapper = document.querySelector(".cursor-wrapper");
 const circles = document.querySelectorAll(".circle");
 
 circles.forEach(circle => {
@@ -26,6 +27,17 @@ function animateCircles(){
         x += (nextCircle.x - x) * 0.1;
         y += (nextCircle.y - y) * 0.1;
     });
+
+    const firstCircle = circles[0];
+    const lastCircle = circles[circles.length - 1];
+    const centerX = (firstCircle.x + lastCircle.x) / 2;
+    const centerY = (firstCircle.y + lastCircle.y) / 2;
+    const distance = Math.hypot(lastCircle.x - firstCircle.x, lastCircle.y - firstCircle.y) + 60;
+
+    wrapper.style.width = distance + "px";
+    wrapper.style.height = distance + "px";
+    wrapper.style.left = centerX + "px";
+    wrapper.style.top = centerY + "px";
 
     requestAnimationFrame(animateCircles);
 }
