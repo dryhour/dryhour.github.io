@@ -115,6 +115,7 @@ input, select, textarea {
 		pointer-events: none;
 		background-color: transparent;
 		backdrop-filter: invert(1);
+		z-index: 9999;
 	}
 	
 	.carousel {
