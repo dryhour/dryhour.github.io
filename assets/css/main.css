@@ -108,14 +108,13 @@ input, select, textarea {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 0;
-		height: 0;
 		pointer-events: none;
 		z-index: 9999;
 		border: 2px solid white;
 		border-radius: 50%;
 		backdrop-filter: invert(1);
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+		transition: transform 0.1s ease;
 	}
 	
 	.circle {
