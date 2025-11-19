@@ -112,7 +112,7 @@ input, select, textarea {
 		z-index: 9999;
 		border: 2px solid white;
 		border-radius: 0%;
-		backdrop-filter: invert(1);
+		backdrop-filter: invert(25%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(0.8);
 		transform: translate(-50%, -50%) scale(1);
 	}
 	
@@ -120,8 +120,8 @@ input, select, textarea {
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 60px;
-		width: 60px;
+		height: 10px;
+		width: 10px;
 		border-radius: 0%;
 		background-color: transparent;
 	}
