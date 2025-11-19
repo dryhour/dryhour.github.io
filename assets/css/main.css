@@ -138,10 +138,13 @@ input, select, textarea {
 	}
 	
 	.carousel {
-		margin: 150px auto 0 auto;
+		margin: 90px auto 0 auto;
 		width: 90%;
 		display: flex;
 		overflow-x: auto;
+		animation: appear linear;
+		animation-timeline: view();
+		animation-range: entry 0% cover 25%;
 	}
 	.carousel::-webkit-scrollbar {
 		display: none;
@@ -188,6 +191,10 @@ input, select, textarea {
 	@keyframes spin {
 		from {translate: 0;}
 		to {translate: -100%;}
+	}
+	@keyframes appear {
+		from {opacity: 0; scale: 0.5;}
+		to {opacity: 1; scale: 1;}
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3504,7 +3511,7 @@ input, select, textarea {
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		height: 45vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;
 		min-height: 22em;

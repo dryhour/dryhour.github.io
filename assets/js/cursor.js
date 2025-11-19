@@ -20,7 +20,7 @@ window.addEventListener("mousemove", e => {
     coords.y = e.clientY;
 });
 
-document.querySelectorAll('button, icon').forEach(el => {
+document.querySelectorAll('button, icons').forEach(el => {
     if (!el.classList.contains('card')) {
         el.addEventListener('mouseenter', () => {
             const rect = el.getBoundingClientRect();
