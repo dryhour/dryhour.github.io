@@ -110,9 +110,9 @@ input, select, textarea {
 		left: 0;
 		pointer-events: none;
 		z-index: 9999;
-		border: 2px solid white;
+		border: 1px solid white;
 		border-radius: 0%;
-		backdrop-filter: invert(25%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(0.8);
+		backdrop-filter: invert(1);
 		transform: translate(-50%, -50%) scale(1);
 	}
 	

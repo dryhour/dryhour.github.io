@@ -34,7 +34,7 @@ function animateCircles() {
         circle.y += (y - circle.y) * 0.2;
         
         const sizeScale = (1 - index * 0.05) * currentScale;
-        const radius = 30 * sizeScale;
+        const radius = 10 * sizeScale;
         
         circle.style.left = (circle.x - coords.x) + "px";
         circle.style.top = (circle.y - coords.y) + "px";
