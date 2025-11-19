@@ -148,9 +148,7 @@ input, select, textarea {
 		flex: 0 0 10em;
 		height: 10em;
 		padding: 0.5em;
-		background: #00000080;
-		border: 1.5px solid #1e36a280;
-		border-radius: 10%;
+		background: transparent;
 		display: flex;
 		flex-direction: column;   
 		align-items: center;      
