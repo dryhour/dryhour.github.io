@@ -8,6 +8,8 @@ const group = document.querySelector(".group");
 let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
 let selectedCard = null;
+let hoveringCard = false;
+let cardTarget = { x: 0, y: 0, width: 0, height: 0 };
 
 circles.forEach(c => { 
     c.x = coords.x; 
@@ -60,7 +62,6 @@ document.querySelectorAll(".card, button").forEach(el => {
     });
 });
 
-
 carousel.addEventListener('wheel', e => {
     e.preventDefault();
 }, { passive: false });
@@ -72,9 +73,6 @@ function animateCircles() {
     const dx = coords.x - lastMouse.x;
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy) / dt * 16;
-
-    let hoveringCard = false;
-    let cardTarget = { x: 0, y: 0, width: 0, height: 0 };
 
     const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
@@ -134,6 +132,8 @@ function animateCircles() {
     const innerSize = Math.min(wrapperWidth, wrapperHeight) / 3;
     innerCircle.style.width = innerSize + "px";
     innerCircle.style.height = innerSize + "px";
+
+    // this keeps everything centered btw
     innerCircle.style.left = "50%";
     innerCircle.style.top = "50%";
     innerCircle.style.transform = "translate(-50%, -50%)";
