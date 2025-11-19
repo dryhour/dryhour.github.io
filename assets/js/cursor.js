@@ -69,7 +69,7 @@ function animateCircles() {
     innerCircle.style.left = "50%";
     innerCircle.style.top = "50%";
     innerCircle.style.transform = "translate(-50%, -50%)";
-
+    
     lastMouse.x = coords.x;
     lastMouse.y = coords.y;
     lastMouse.time = now;
