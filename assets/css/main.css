@@ -152,6 +152,9 @@ input, select, textarea {
 		justify-content: center;
 		animation: spin 10s infinite linear forwards;
 	}
+	.group.paused {
+		animation-play-state: paused;
+	}	  
 	.card {
 		flex: 0 0 10em;
 		height: 10em;

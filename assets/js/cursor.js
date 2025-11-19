@@ -2,11 +2,13 @@ const coords = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 const wrapper = document.querySelector(".cursor-wrapper");
 const circles = document.querySelectorAll(".circle");
 const innerCircle = document.querySelector(".inner-circle");
+const carousel = document.querySelector(".carousel");
+const group = document.querySelector(".group");
 
 let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
+let selectedCard = null;
 
-// Initialize circles positions
 circles.forEach(c => { 
     c.x = coords.x; 
     c.y = coords.y; 
@@ -17,6 +19,53 @@ window.addEventListener("mousemove", e => {
     coords.y = e.clientY;
 });
 
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+  
+        if (selectedCard === card) {
+            selectedCard = null;
+            group.classList.remove('paused');
+            return;
+        }
+  
+        selectedCard = card;
+  
+        group.classList.add('paused');
+  
+        const rect = card.getBoundingClientRect();
+        const carouselRect = carousel.getBoundingClientRect();
+        
+        const offset = (rect.left + rect.width/2) - (carouselRect.left + carouselRect.width/2);
+  
+        carousel.scrollBy({
+            left: offset,
+            behavior: 'smooth'
+        });
+    });
+});
+
+document.querySelectorAll(".card, button").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        const rect = el.getBoundingClientRect();
+        hoveringCard = true;
+
+        cardTarget.x = rect.left + rect.width / 2;
+        cardTarget.y = rect.top + rect.height / 2;
+        cardTarget.width = rect.width;
+        cardTarget.height = rect.height;
+    });
+
+    el.addEventListener("mouseleave", () => {
+        hoveringCard = false;
+    });
+});
+
+
+carousel.addEventListener('wheel', e => {
+    e.preventDefault();
+}, { passive: false });
+
+
 function animateCircles() {
     const now = Date.now();
     const dt = Math.max(1, now - lastMouse.time);
@@ -26,23 +75,6 @@ function animateCircles() {
 
     let hoveringCard = false;
     let cardTarget = { x: 0, y: 0, width: 0, height: 0 };
-
-    document.querySelectorAll(".card, button").forEach(card => {
-        card.addEventListener("mouseenter", () => {
-            const rect = card.getBoundingClientRect();
-            hoveringCard = true;
-    
-            cardTarget.x = rect.left + rect.width / 2;
-            cardTarget.y = rect.top + rect.height / 2;
-            cardTarget.width = rect.width;
-            cardTarget.height = rect.height;
-        });
-    
-        card.addEventListener("mouseleave", () => {
-            hoveringCard = false;
-        });
-    });
-    
 
     const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
