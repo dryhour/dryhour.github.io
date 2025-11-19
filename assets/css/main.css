@@ -203,7 +203,7 @@ input, select, textarea {
 		color: #242943;
 		text-align: center;
 		display: inline-flex;
-		align-items: center;
+		align-items: center	;
 		gap: 8px;
 		padding: 10px 20px;
 		text-decoration: none;
@@ -213,17 +213,6 @@ input, select, textarea {
 	
 	.resume-button:hover {
 		background-color: #005fcc;
-	}
-	
-	.resume-button .icon {
-		background-color: #ffffff;
-		border-radius: 100%;
-		color: #242943;
-		display: inline-block;
-		height: 2em;
-		line-height: 2em;
-		text-align: center;
-		width: 2em;
 	}
 	
 	
