@@ -27,30 +27,37 @@ function animateCircles() {
     let x = coords.x;
     let y = coords.y;
 
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+
     circles.forEach((circle, index) => {
-        circle.style.left = circle.x + "px";
-        circle.style.top = circle.y + "px";
+        circle.x += (x - circle.x) * 0.2;
+        circle.y += (y - circle.y) * 0.2;
         
-        const sizeScale = (1 - index * 0.03) * currentScale;
+        const sizeScale = (1 - index * 0.05) * currentScale;
+        const radius = 30 * sizeScale;
+        
+        circle.style.left = (circle.x - coords.x) + "px";
+        circle.style.top = (circle.y - coords.y) + "px";
         circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
         
-        circle.x += (x - circle.x) * 0.25;
-        circle.y += (y - circle.y) * 0.25;
+        minX = Math.min(minX, circle.x - radius);
+        maxX = Math.max(maxX, circle.x + radius);
+        minY = Math.min(minY, circle.y - radius);
+        maxY = Math.max(maxY, circle.y + radius);
         
         x = circle.x;
         y = circle.y;
     });
 
-    const first = circles[0];
-    const last = circles[circles.length - 1];
-    const centerX = (first.x + last.x) / 2;
-    const centerY = (first.y + last.y) / 2;
-    const distance = Math.hypot(last.x - first.x, last.y - first.y) + 60;
+    const wrapperWidth = maxX - minX + 20;
+    const wrapperHeight = maxY - minY + 20;
+    const wrapperX = (minX + maxX) / 2;
+    const wrapperY = (minY + maxY) / 2;
 
-    wrapper.style.width = distance + "px";
-    wrapper.style.height = distance + "px";
-    wrapper.style.left = centerX + "px";
-    wrapper.style.top = centerY + "px";
+    wrapper.style.width = wrapperWidth + "px";
+    wrapper.style.height = wrapperHeight + "px";
+    wrapper.style.left = wrapperX + "px";
+    wrapper.style.top = wrapperY + "px";
     wrapper.style.transform = `translate(-50%, -50%)`;
 
     lastMouse.x = coords.x;
