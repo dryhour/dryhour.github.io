@@ -72,14 +72,17 @@ function animateCircles() {
         y = circle.y;
     });
 
+    const wrapperWidth = maxX - minX + 20;
+    const wrapperHeight = maxY - minY + 20;
+    const wrapperX = (minX + maxX) / 2;
+    const wrapperY = (minY + maxY) / 2;
+
     if (!hoveringCard) {
-        // Normal mouse-follow behavior
         wrapper.style.width = wrapperWidth + "px";
         wrapper.style.height = wrapperHeight + "px";
         wrapper.style.left = wrapperX + "px";
         wrapper.style.top = wrapperY + "px";
     } else {
-        // Tween towards the hovered card
         const currentRect = wrapper.getBoundingClientRect();
     
         const lerp = (a, b, t) => a + (b - a) * t;
@@ -93,9 +96,9 @@ function animateCircles() {
         wrapper.style.height = newHeight + "px";
         wrapper.style.left = newX + "px";
         wrapper.style.top = newY + "px";
-    }    
+    }
+    
 
-    // Inner circle: 1/3 of wrapper size, stays centered
     const innerSize = Math.min(wrapperWidth, wrapperHeight) / 3;
     innerCircle.style.width = innerSize + "px";
     innerCircle.style.height = innerSize + "px";

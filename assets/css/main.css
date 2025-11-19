@@ -134,6 +134,7 @@ input, select, textarea {
 		width: 10px;
 		border-radius: 0%;
 		background-color: transparent;
+		z-index: 10000;
 	}
 	
 	.carousel {
