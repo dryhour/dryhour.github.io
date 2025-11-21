@@ -1909,10 +1909,8 @@ input, select, textarea {
 	}
 
 	header.major {
-		width: -moz-max-content;
-		width: -webkit-max-content;
-		width: -ms-max-content;
-		width: max-content;
+		width: 50vw;
+		margin-left: 0;
 		margin-bottom: 2em;
 		font-family: 'DM Mono', monospace;
 		font-size: 48px;
@@ -1947,7 +1945,6 @@ input, select, textarea {
 			}
 
 		header.major > p {
-			width: 50vw;
 			font-size: 16px;
 			font-weight: 300;
 			margin-bottom: 0;
