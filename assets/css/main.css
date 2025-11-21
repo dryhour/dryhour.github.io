@@ -208,7 +208,7 @@ input, select, textarea {
 	
 	.information {
 		width: 15vw;
-		height: 10vh;
+		height: 15vh;
 		display: grid;
 		grid-template-rows: 1fr auto;
 		gap: 8px;
@@ -231,7 +231,7 @@ input, select, textarea {
 		font-weight: 700;
 		color: #111827;
 		text-decoration: none;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 	
 	
@@ -273,6 +273,15 @@ input, select, textarea {
 		width: 100%;
 		box-sizing: border-box;
 	}
+
+	.icons li:first-child a {
+		margin-left: 0;
+	}
+	
+	.icons li:last-child a {
+		margin-right: 0;
+	}
+	
 	
 	.icons li a img {
 		height: 26px;
