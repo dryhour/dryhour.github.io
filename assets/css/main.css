@@ -1923,15 +1923,15 @@ input, select, textarea {
 	
 	header > h1 {
 		font-size: 25px;
-		line-height: 0.75;
+		line-height: 1;
 	}
 	
 	.name-highlight {
-		background-image: linear-gradient(to top right, #0291ff, #ff1515);
+		background-image: linear-gradient(to top right, #0291ff, #7dc7ff, #0291ff);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		font-size: 140px;
+		font-size: 130px;
 		font-weight: 700;
 		text-transform: uppercase;
 	}
