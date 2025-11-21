@@ -3574,7 +3574,6 @@ input, select, textarea {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		border-bottom: 0 !important;
 		cursor: default;
 		height: 75vh;
 		margin-bottom: -3.25em;
