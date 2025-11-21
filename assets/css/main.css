@@ -1917,16 +1917,18 @@ input, select, textarea {
 		font-family: 'DM Mono', monospace;
 		font-size: 48px;
 		font-weight: 500;
-		background-image: linear-gradient(to bottom, #b7cad9, #ffffff, #b7cad9);
+		background-image: linear-gradient(to top right, #82919c, #ffffff, #73808a);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
+		white-space: pre-wrap; 
 	}
 	.name-highlight {
-		background-image: linear-gradient(to bottom, #4eb1fc, #0091ff, #4eb1fc);
+		background-image: linear-gradient(to top right, #115c96, #0091ff, #97c8ee);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
+		font-size: 55px;
 		font-weight: 700;
 	}
 	
@@ -1946,7 +1948,8 @@ input, select, textarea {
 			}
 
 		header.major > p {
-			font-size: 0.6em;
+			white-space: pre-wrap; 
+			font-size: 0.3em;
 			font-weight: 300;
 			margin-bottom: 0;
 		}
