@@ -1910,8 +1910,9 @@ input, select, textarea {
 
 	header.major {
 		width: 50vw;
-		margin-left: 0;
-		margin-bottom: 2em;
+		float: left;
+		margin: 0;
+		text-align: left;
 		font-family: 'DM Mono', monospace;
 		font-size: 48px;
 		font-weight: 500;
@@ -1920,20 +1921,23 @@ input, select, textarea {
 		background-clip: text;
 		color: transparent;
 	}
+	
 	.name-highlight {
 		background-image: linear-gradient(to top right, #115c96, #0091ff, #97c8ee);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		font-size: 55px;
+		font-size: 50px;
 		font-weight: 700;
 	}
 	
-
-		header.major > :first-child {
-			margin-bottom: 0;
-			width: calc(100% + 0.5em);
-		}
+	header.major > :first-child:after {
+		content: '';
+		display: block;
+		height: 2px;
+		margin: 0.325em 0 0.5em 0;
+		width: 100%;
+	}
 
 			header.major > :first-child:after {
 				content: '';
