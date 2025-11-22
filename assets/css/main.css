@@ -254,10 +254,11 @@ input, select, textarea {
 		gap: 8px;
 	}
 
-	.icon.brands.alt.fa-github,
-	.icon.brands.alt.fa-linkedin-in {
+	.icon.brands.alt.fa-github::before,
+	.icon.brands.alt.fa-linkedin-in::before {
 		filter: invert(1);
 	}
+
 	
 
 	
