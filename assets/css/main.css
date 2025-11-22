@@ -208,7 +208,7 @@ input, select, textarea {
 	
 	.information {
 		width: 15vw;
-		height: 15vh;
+		height: 10vh;
 		display: grid;
 		grid-template-rows: 1fr auto;
 		gap: 8px;
@@ -234,7 +234,6 @@ input, select, textarea {
 		font-size: 1.25rem;
 	}
 	
-	
 	.resume-button .icon {
 		width: 1em;
 		height: 1em;
@@ -253,6 +252,13 @@ input, select, textarea {
 		margin: 0;
 		list-style: none;
 	}
+
+	.icon.brands.alt.fa-linkedin-in {
+		filter: invert(1);
+	}
+	.icon.brands.alt.fa-github {
+		filter: invert(1);
+	}
 	
 	.icons li {
 		flex: 1;
@@ -266,7 +272,7 @@ input, select, textarea {
 		height: 54px;
 		padding: 0 20px;
 		border-radius: 12px;
-		background-color: #080d1a;
+		background-color: #000000;
 		border: 1px solid #121a2c;
 		color: white;
 		font-weight: 700;
@@ -277,7 +283,7 @@ input, select, textarea {
 
 	.icons li:first-child a {
 		margin-left: 0;
-		margin-right: 8;
+		margin-right: 8px;
 	}
 	
 	.icons li:last-child a {
