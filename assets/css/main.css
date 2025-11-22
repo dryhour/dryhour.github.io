@@ -210,7 +210,7 @@ input, select, textarea {
 		width: 15vw;
 		height: 10vh;
 		display: grid;
-		grid-template-rows: 1fr auto;
+		grid-template-rows: 1fr 1fr;
 		gap: 8px;
 		align-items: center;
 		justify-items: start;
@@ -251,14 +251,14 @@ input, select, textarea {
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		gap: 8px;
 	}
 
-	.icon.brands.alt.fa-linkedin-in {
+	.icon.brands.alt.fa-linkedin-in img,
+	.icon.brands.alt.fa-github img {
 		filter: invert(1);
 	}
-	.icon.brands.alt.fa-github {
-		filter: invert(1);
-	}
+
 	
 	.icons li {
 		flex: 1;
@@ -283,7 +283,6 @@ input, select, textarea {
 
 	.icons li:first-child a {
 		margin-left: 0;
-		margin-right: 8px;
 	}
 	
 	.icons li:last-child a {
