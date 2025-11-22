@@ -140,11 +140,20 @@ input, select, textarea {
 		margin: 90px auto 0 auto;
 		width: 90%;
 		display: flex;
+		padding-right: 2rem;
+		gap: 1em;
 		overflow-x: auto;
+		-webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: 100% 100%;
+		mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+		mask-repeat: no-repeat;
+		mask-size: 100% 100%;
 		animation: appear linear;
 		animation-timeline: view();
 		animation-range: entry 0% cover 25%;
 	}
+	
 	.carousel::-webkit-scrollbar {
 		display: none;
 	}
@@ -170,10 +179,6 @@ input, select, textarea {
 		justify-content: center; 
 		text-align: center;
 		color: white;        
-		margin-right: 1em;     
-	}
-	.group .card:last-child {
-		margin-right: 0;
 	}
 	.card p {
 		margin: 0;        
