@@ -221,7 +221,7 @@ input, select, textarea {
 	
 	.resume-button {
 		background: #f3f6fb;
-		border-radius: 14px;
+		border-radius: 10px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
