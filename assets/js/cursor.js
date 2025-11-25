@@ -56,9 +56,8 @@ carousel.addEventListener('wheel', e => {
 
 function animateCircles() {
     const now = Date.now();
-    const tween = 0.15; // smoothness factor
+    const tween = 0.15;
 
-    // Smoothly follow cursor
     lastMouse.x += (coords.x - lastMouse.x) * tween;
     lastMouse.y += (coords.y - lastMouse.y) * tween;
 
@@ -75,7 +74,6 @@ function animateCircles() {
         targetY = cardTarget.y;
     }
 
-    // Smoothly interpolate wrapper size and position
     const lerp = (a, b, t) => a + (b - a) * t;
 
     wrapper.style.width = lerp(wrapper.offsetWidth, targetWidth, tween) + "px";
@@ -83,7 +81,6 @@ function animateCircles() {
     wrapper.style.left = lerp(parseFloat(wrapper.style.left || 0), targetX, tween) + "px";
     wrapper.style.top = lerp(parseFloat(wrapper.style.top || 0), targetY, tween) + "px";
 
-    // Update circles to follow wrapper
     let x = parseFloat(wrapper.style.left || 0);
     let y = parseFloat(wrapper.style.top || 0);
 
@@ -101,8 +98,6 @@ function animateCircles() {
         x = circle.x;
         y = circle.y;
     });
-    
-    
 
     lastMouse.time = now;
     requestAnimationFrame(animateCircles);

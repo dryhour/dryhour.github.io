@@ -209,13 +209,13 @@ input, select, textarea {
 		object-fit: cover;
 		z-index: -2;
 	}
-	#container3D canvas {
-		width: 100vw !important;
-		height: 100vh !important;
+	#container3D {
+		width: 100vw;
+		height: 100vh;
 		position: absolute;
 		top: 0;
 		left: 0;
-	}
+	}	
 	
 	.information {
 		width: 15vw;
