@@ -56,8 +56,14 @@ function animateCircles() {
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy) / dt * 16;
 
-    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-    wrapper.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+    let wrapperAngle = 0;
+
+    if (dx !== 0 || dy !== 0) {
+        wrapperAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+    }
+    
+    wrapper.style.transform = `translate(-50%, -50%) rotate(${wrapperAngle}deg)`;
+    
 
     const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
