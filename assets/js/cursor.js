@@ -82,7 +82,7 @@ function animateCircles() {
         
         circle.style.left = (circle.x - coords.x) + "px";
         circle.style.top = (circle.y - coords.y) + "px";
-        circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
+       //  circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
         
         minX = Math.min(minX, circle.x - radius);
         maxX = Math.max(maxX, circle.x + radius);
@@ -129,7 +129,7 @@ function animateCircles() {
     // this keeps everything centered btw
     innerCircle.style.left = "50%";
     innerCircle.style.top = "50%";
-    innerCircle.style.transform = "translate(-50%, -50%)";
+    // innerCircle.style.transform = "translate(-50%, -50%)";
 
     lastMouse.x = coords.x;
     lastMouse.y = coords.y;
