@@ -16,18 +16,34 @@ circles.forEach(c => {
     c.y = coords.y; 
 });
 
+let lastX = null;
+let lastY = null;
+
 window.addEventListener("mousemove", e => {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
+    if (lastX === null) {
+        lastX = e.clientX;
+        lastY = e.clientY;
+        return;
+    }
 
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-    const mouseX = (e.clientX / windowWidth - 0.5) * 20;
-    const mouseY = (e.clientY / windowHeight - 0.5) * 20;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const mouseX = (e.clientX / w - 0.5) * 20;
+    const mouseY = (e.clientY / h - 0.5) * 20;
 
-    video.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    video.style.transform = `
+        translate(${mouseX}px, ${mouseY}px)
+        rotate(${angle}deg)
+    `;
+
+    lastX = e.clientX;
+    lastY = e.clientY;
 });
+
 
 
 document.querySelectorAll('button, .resume-button, .icons a').forEach(el => {
