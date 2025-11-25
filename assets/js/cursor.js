@@ -56,76 +56,39 @@ carousel.addEventListener('wheel', e => {
 
 function animateCircles() {
     const now = Date.now();
-    const dt = Math.max(1, now - lastMouse.time);
-    const dx = coords.x - lastMouse.x;
-    const dy = coords.y - lastMouse.y;
-    // const speed = Math.hypot(dx, dy) / dt * 16;
+    const dt = Math.max(0.5, now - lastMouse.time);
 
-    // const targetScale = Math.max(0.5, 1 - speed / 25);
-    // currentScale += (targetScale - currentScale) * 0.15;
+    // Tween factor controls smoothness (0.1–0.2 is good)
+    const tween = 0.15;
 
-    let x = coords.x;
-    let y = coords.y;
+    // Move wrapper smoothly toward cursor
+    lastMouse.x += (coords.x - lastMouse.x) * tween;
+    lastMouse.y += (coords.y - lastMouse.y) * tween;
 
-    if (dx !== 0 || dy !== 0) {
-        trailAngle = Math.atan2(dy, dx) * (180 / Math.PI);
-    }    
+    wrapper.style.left = lastMouse.x + "px";
+    wrapper.style.top = lastMouse.y + "px";
+    wrapper.style.width = "35px";
+    wrapper.style.height = "35px";
 
-    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    // Update circles to follow wrapper
+    let x = lastMouse.x;
+    let y = lastMouse.y;
 
     circles.forEach((circle, index) => {
-        circle.x += (x - circle.x) * 0.2;
-        circle.y += (y - circle.y) * 0.2;
-        
-        const sizeScale = (1 - index * 0.05) * currentScale;
-        const radius = 30 * sizeScale;
-        
-        // circle.style.left = (circle.x - coords.x) + "px";
-        // circle.style.top = (circle.y - coords.y) + "px";
-        // circle.style.transform = `translate(-50%, -50%) rotate(${trailAngle}deg) scale(1)`;
-                
-        minX = Math.min(minX, circle.x - radius);
-        maxX = Math.max(maxX, circle.x + radius);
-        minY = Math.min(minY, circle.y - radius);
-        maxY = Math.max(maxY, circle.y + radius);
-        
+        circle.x += (x - circle.x) * tween;
+        circle.y += (y - circle.y) * tween;
+
+        circle.style.left = circle.x + "px";
+        circle.style.top = circle.y + "px";
+        circle.style.transform = `translate(-50%, -50%)`;
+
         x = circle.x;
         y = circle.y;
     });
 
-    const wrapperWidth = 10 // maxX - minX + 20;
-    const wrapperHeight = 10 // maxY - minY + 20;
-    const wrapperX = (minX + maxX) / 2;
-    const wrapperY = (minY + maxY) / 2;
-
-    if (!hoveringCard) {
-        wrapper.style.width = wrapperWidth + "px";
-        wrapper.style.height = wrapperHeight + "px";
-        wrapper.style.left = wrapperX + "px";
-        wrapper.style.top = wrapperY + "px";
-    } else {
-        const currentRect = wrapper.getBoundingClientRect();
-    
-        const lerp = (a, b, t) => a + (b - a) * t;
-    
-        const padding = 15;
-        const newWidth = lerp(currentRect.width, cardTarget.width + padding, 0.15);
-        const newHeight = lerp(currentRect.height, cardTarget.height + padding, 0.15);
-        const newX = lerp(currentRect.left + currentRect.width / 2, cardTarget.x, 0.15);
-        const newY = lerp(currentRect.top + currentRect.height / 2, cardTarget.y, 0.15);
-    
-        wrapper.style.width = newWidth + "px";
-        wrapper.style.height = newHeight + "px";
-        wrapper.style.left = newX + "px";
-        wrapper.style.top = newY + "px";
-        
-    }
-
-    lastMouse.x = coords.x;
-    lastMouse.y = coords.y;
     lastMouse.time = now;
-
     requestAnimationFrame(animateCircles);
 }
+
 
 animateCircles();
