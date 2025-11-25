@@ -209,7 +209,7 @@ input, select, textarea {
 		object-fit: cover;
 		z-index: -2;
 	}
-	#container3D {
+	#gltf-container {
 		width: 100vw;
 		height: 100vh;
 		position: absolute;
