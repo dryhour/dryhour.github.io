@@ -95,8 +95,8 @@ function animateCircles() {
 
     const wrapperWidth = maxX - minX + 20;
     const wrapperHeight = maxY - minY + 20;
-    const wrapperX = (minX + maxX) / 2;
-    const wrapperY = (minY + maxY) / 2;
+    const wrapperX = 10 // (minX + maxX) / 2;
+    const wrapperY = 10 // (minY + maxY) / 2;
 
     if (!hoveringCard) {
         wrapper.style.width = wrapperWidth + "px";
