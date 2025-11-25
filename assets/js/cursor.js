@@ -89,7 +89,7 @@ function animateCircles() {
 
     circles.forEach((circle, index) => {
         // Each circle lags more based on its index
-        const circleTween = tween * (1 - index * 0.1); // first circle fastest, later circles slower
+        const circleTween = tween * (1 - index * 0.2); // first circle fastest, later circles slower
     
         circle.x += (x - circle.x) * circleTween;
         circle.y += (y - circle.y) * circleTween;
