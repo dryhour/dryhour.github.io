@@ -1,4 +1,4 @@
-import './style.css';
+/*import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -66,7 +66,7 @@ const moon = new THREE.Mesh(
   /* new THREE.MeshStandardMaterial({
     // map: moonTexture,
     // normalMap: normalTexture,
-  }) */
+  })
 );
 
 scene.add(moon);
@@ -113,3 +113,5 @@ function animate() {
 }
 
 animate();
+
+*/
