@@ -9,7 +9,7 @@ let mouseY = window.innerHeight / 2;
 
 const loader = new GLTFLoader();
 loader.load(
-  './models/black_hole/scene.gltf',
+  './models/ball_simple/scene.gltf',
   (gltf) => {
     object = gltf.scene;
     scene.add(object);
