@@ -209,13 +209,11 @@ input, select, textarea {
 		object-fit: cover;
 		z-index: -2;
 	}
-	#gltf-container {
-		width: 100vw;
-		height: 100vh;
-		position: absolute;
+	canvas {
+		position: fixed;
 		top: 0;
 		left: 0;
-	}	
+	}
 	
 	.information {
 		width: 15vw;
