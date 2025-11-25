@@ -56,25 +56,38 @@ carousel.addEventListener('wheel', e => {
 
 function animateCircles() {
     const now = Date.now();
-    const dt = Math.max(0.5, now - lastMouse.time);
+    const tween = 0.15; // smoothness factor
 
-    // Tween factor controls smoothness (0.1–0.2 is good)
-    const tween = 0.15;
-
-    // Move wrapper smoothly toward cursor
+    // Smoothly follow cursor
     lastMouse.x += (coords.x - lastMouse.x) * tween;
     lastMouse.y += (coords.y - lastMouse.y) * tween;
 
-    wrapper.style.left = lastMouse.x + "px";
-    wrapper.style.top = lastMouse.y + "px";
-    wrapper.style.width = "35px";
-    wrapper.style.height = "35px";
+    let targetWidth = 35;
+    let targetHeight = 35;
+    let targetX = lastMouse.x;
+    let targetY = lastMouse.y;
+
+    if (hoveringCard) {
+        const padding = 15;
+        targetWidth = cardTarget.width + padding;
+        targetHeight = cardTarget.height + padding;
+        targetX = cardTarget.x;
+        targetY = cardTarget.y;
+    }
+
+    // Smoothly interpolate wrapper size and position
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    wrapper.style.width = lerp(wrapper.offsetWidth, targetWidth, tween) + "px";
+    wrapper.style.height = lerp(wrapper.offsetHeight, targetHeight, tween) + "px";
+    wrapper.style.left = lerp(parseFloat(wrapper.style.left || 0), targetX, tween) + "px";
+    wrapper.style.top = lerp(parseFloat(wrapper.style.top || 0), targetY, tween) + "px";
 
     // Update circles to follow wrapper
-    let x = lastMouse.x;
-    let y = lastMouse.y;
+    let x = parseFloat(wrapper.style.left || 0);
+    let y = parseFloat(wrapper.style.top || 0);
 
-    circles.forEach((circle, index) => {
+    circles.forEach(circle => {
         circle.x += (x - circle.x) * tween;
         circle.y += (y - circle.y) * tween;
 
@@ -89,6 +102,5 @@ function animateCircles() {
     lastMouse.time = now;
     requestAnimationFrame(animateCircles);
 }
-
 
 animateCircles();
