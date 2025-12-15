@@ -30,8 +30,19 @@ window.addEventListener("mousemove", e => {
     video.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
 
+/*
+document.querySelectorAll('experience').forEach(el => {
+    el.addEventListener('mouseenter', () => {
 
-document.querySelectorAll('button, .resume-button, .icons a, .skill').forEach(el => {
+    });
+
+    el.addEventListener('mouseleave', () => {
+
+    });
+});
+*/
+
+document.querySelectorAll('button, .resume-button, .icons a, .skill, .experience-button').forEach(el => {
     el.addEventListener('mouseenter', () => {
         const rect = el.getBoundingClientRect();
         hoveringCard = true;
