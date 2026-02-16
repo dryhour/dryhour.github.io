@@ -6,4 +6,4 @@ This was originally a template for the base of the project. This may contain par
 # RESOURCES: 
 https://www.youtube.com/watch?v=0TnO1GzKWPc&list=LL&index=6
 
-Template: 
+Template: https://html5up.net/forty
