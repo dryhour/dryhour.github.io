@@ -13,3 +13,9 @@ https://www.youtube.com/watch?v=0TnO1GzKWPc&list=LL&index=6
 
 Template: https://html5up.net/forty
 
+
+**TODO**
+
+1. Add footer w/ contact
+2. Add mini-projects section
+3. Update information
